@@ -1,9 +1,11 @@
 ﻿using Gallery.Models;
 using Gallery.Repositories;
 using Microsoft.Win32;
+using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace Gallery.Views;
 
@@ -21,6 +23,10 @@ public partial class MainWindow : Window
         }
         for (int i = 0; i < Images.Count; i++)
         {
+            MessageBox.Show(Images[i].ImageUrl);
+            BitmapImage image = new BitmapImage(new Uri($"{Images[i].ImageUrl}", UriKind.Absolute));
+            image.CacheOption = BitmapCacheOption.OnLoad;
+            image.Freeze();
             itms.Items.Add(Images[i]);
         }
     }

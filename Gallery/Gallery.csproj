@@ -11,4 +11,16 @@
     <Compile Remove="AssemblyInfo.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Images\MonaLisa.jpg" />
+    <None Remove="Images\Napoleon.jpg" />
+    <None Remove="Images\Scream.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\MonaLisa.jpg" />
+    <Resource Include="Images\Napoleon.jpg" />
+    <Resource Include="Images\Scream.jpeg" />
+  </ItemGroup>
+
 </Project>
