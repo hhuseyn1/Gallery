@@ -40,7 +40,7 @@ public partial class MainWindow : Window
                 itms.Items.Clear();
                 //Clear all
                 itms.Items.Add(item);
-                //Add item
+                //Add 
             }
         }
     }
