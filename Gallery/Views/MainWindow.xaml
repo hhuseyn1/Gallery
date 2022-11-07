@@ -42,13 +42,6 @@
             <StackPanel Grid.Row="2">
                 <ScrollViewer VerticalScrollBarVisibility="Auto"/>
                 <ItemsControl Name="itms" Margin="20" Height="350">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <Image x:Name="img" Source="{Binding ImageUrl}" Margin="20" ></Image>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel/>

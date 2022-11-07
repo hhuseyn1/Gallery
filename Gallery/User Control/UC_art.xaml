@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Gallery.User_Control.UC_art"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Gallery.User_Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="200">
+    <Grid Background="Wheat">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Width="200" MouseDown="ArtImage_MouseLeftButtonDown" Height="200" Name="ArtImage" Grid.Row="0" Stretch="Fill"/>
+        <TextBlock Name="ArtTitle" Grid.Row="1" Foreground="Black" />
+    </Grid>
+    
+</UserControl>

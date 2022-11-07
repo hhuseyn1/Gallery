@@ -1,0 +1,18 @@
+﻿<Window x:Class="Gallery.Views.ShowWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gallery.Views"
+        mc:Ignorable="d"
+        Title="ShowWindow" Height="400" Width="350" WindowStartupLocation="CenterScreen">
+    <Grid Background="Wheat">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Width="200" Height="200" Name="ArtImage" Grid.Row="0" Stretch="Fill"/>
+        <TextBlock Name="ArtTitle" Grid.Row="1" Background="Wheat" Foreground="Black"/>
+    </Grid>
+</Window>

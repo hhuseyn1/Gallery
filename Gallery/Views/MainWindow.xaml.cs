@@ -1,5 +1,6 @@
 ﻿using Gallery.Models;
 using Gallery.Repositories;
+using Gallery.User_Control;
 using Microsoft.Win32;
 using System;
 using System.Collections.ObjectModel;
@@ -15,7 +16,6 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        DataContext = this;
 
         for (int i = 0; i < FakeRepository.Arts.Count; i++)
         {
@@ -23,12 +23,13 @@ public partial class MainWindow : Window
         }
         for (int i = 0; i < Images.Count; i++)
         {
-            MessageBox.Show(Images[i].ImageUrl);
             BitmapImage image = new BitmapImage(new Uri($"{Images[i].ImageUrl}", UriKind.Absolute));
             image.CacheOption = BitmapCacheOption.OnLoad;
             image.Freeze();
-            itms.Items.Add(Images[i]);
+            UC_art art = new(Images[i],image);
+            itms.Items.Add(art);
         }
+
     }
 
     private void SearchClick(object sender, RoutedEventArgs e)
@@ -37,10 +38,12 @@ public partial class MainWindow : Window
         {
             if (SearchBox.Text == item.Title)
             {
+                BitmapImage image = new BitmapImage(new Uri($"{item.ImageUrl}", UriKind.Absolute));
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.Freeze();
+                UC_art art = new(item, image);
                 itms.Items.Clear();
-                //Clear all
-                itms.Items.Add(item);
-                //Add 
+                itms.Items.Add(art);
             }
         }
     }
@@ -63,11 +66,13 @@ public partial class MainWindow : Window
 
                         Images.Add(new Art()
                         {
-                            ImageUrl = openFileDialog1.FileName,
+                            Title = openFileDialog1.Title,
+                            ImageUrl = openFileDialog1.FileName
                         });
                         itms.Items.Add(new Art()
                         {
-                            ImageUrl = openFileDialog1.FileName,
+                            Title = openFileDialog1.Title,
+                            ImageUrl = openFileDialog1.FileName
                         });
                     }
                     break;
