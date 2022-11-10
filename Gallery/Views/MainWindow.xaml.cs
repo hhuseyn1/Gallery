@@ -3,6 +3,7 @@ using Gallery.Repositories;
 using Gallery.User_Control;
 using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;

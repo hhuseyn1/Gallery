@@ -10,9 +10,17 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="8*"/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Image Width="200" Height="200" Name="ArtImage" Grid.Row="0" Stretch="Fill"/>
-        <TextBlock Name="ArtTitle" Grid.Row="1" Background="Wheat" Foreground="Black"/>
+        <Image Width="300" Height="300" Name="ArtImage" Source="{Binding CurrentArt.ImageUrl}" Grid.Row="0" Stretch="Fill"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        <TextBox Name="ArtTitle" FontSize="20" Grid.Row="1" Text="{Binding CurrentArt.Title}" VerticalAlignment="Center" Background="Wheat" Foreground="Black"/>
+            <Button Grid.Column="1" Background="Green" VerticalAlignment="Center" Height="20" FontSize="12" FontFamily="Arial" Content="Save" Click="SaveCancel" Foreground="White"/>
+            <Button Grid.Column="2" Background="Red" VerticalAlignment="Center" Height="20" FontSize="12" FontFamily="Arial" Content="Cancel" Click="SaveCancel" Foreground="White"/>
+        </Grid>
     </Grid>
 </Window>

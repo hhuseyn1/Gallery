@@ -11,8 +11,8 @@
             <RowDefinition Height="8*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Image Width="200" MouseDown="ArtImage_MouseLeftButtonDown" Height="200" Name="ArtImage" Grid.Row="0" Stretch="Fill"/>
-        <TextBlock Name="ArtTitle" Grid.Row="1" Foreground="Black" />
+        <Image Width="200" MouseDown="ArtImage_MouseLeftButtonDown" Source="{Binding Art.ImageUrl}" Height="200" Name="ArtImage" Grid.Row="0" Stretch="Fill"/>
+        <TextBlock Name="ArtTitle" Grid.Row="1" Foreground="Black" Text="{Binding Art.Title}" />
     </Grid>
     
 </UserControl>

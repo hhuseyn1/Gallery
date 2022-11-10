@@ -1,24 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Gallery.Models;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
-namespace Gallery.Views
+namespace Gallery.Views;
+
+public partial class ShowWindow : Window
 {
-    public partial class ShowWindow : Window
+    public Art CurrentArt { get;set; }
+    public ShowWindow(Art art)
     {
-        public ShowWindow()
+        InitializeComponent();
+        DataContext = this;
+        CurrentArt = art;
+    }
+
+    private void PrevNext(object sender, RoutedEventArgs e)
+    {
+        if(sender is Button btn)
         {
-            InitializeComponent();
+            if (btn.Name == "Save")
+            {
+                CurrentArt.Title = ArtTitle.Text;
+                CurrentArt.IsChanged= true;
+            }
+            else if (btn.Name == "Cancel")
+            {
+                CurrentArt.IsChanged= false;
+            }
+            Close();
         }
     }
 }
